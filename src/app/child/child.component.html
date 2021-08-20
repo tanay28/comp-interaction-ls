@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <form class="form-inline">
+        <label class="sr-only label" for="childData">Child Data</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="childData" [ngModelOptions]="{standalone: true}" [(ngModel)]="txtChildData" placeholder="Enter data here...">  
+        <button type="submit" class="btn btn-success mb-2" (click)="sendDataToParent()">Submit</button>
+    </form>
+    <hr/>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                  Data Log
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Data Recieved From Parent</h5>
+                  <p class="card-text" style="color: red;" *ngIf="messageFromParent != '' else noData">{{messageFromParent}}</p>
+                  <ng-template #noData><p style="color: red;">NA</p></ng-template>
+                  <button type="button" class="btn btn-outline-danger" (click)="clearData()" style="float: right;">Clear Data</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

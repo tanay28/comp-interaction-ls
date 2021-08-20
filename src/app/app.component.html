@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col" style="margin: 20px;color:blue;">
+      <h1 style="text-align: center;">Angular Component Interaction</h1>
+    </div>
+    <span class="sub-heading">Using Angular Local Storage</span>
+  </div>
+  
+  <div class="row" style="margin-top: 20px;">
+    <div class="col parent-bg">
+      <h4 style="text-align: center;color: red;"><b>Parent Component</b></h4>
+      <div class="wrapper">
+        <form class="form-inline">
+            <label class="sr-only label" for="parentData">Parent Data</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" [(ngModel)]="data"  [ngModelOptions]="{standalone: true}" id="parentData" placeholder="Enter data here...">  
+            <button type="submit" class="btn btn-danger mb-2" (click)="sendData()">Submit</button>
+        </form>
+        <hr/>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Data Log
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Data Recieved From Child</h5>
+                <p class="card-text" style="color: green;" *ngIf="dataReceived != '' else nodata">{{dataReceived}}</p>
+                <ng-template #nodata>
+                  <p style="color: green;">NA</p>
+                </ng-template>
+                <button type="button" class="btn btn-outline-success" (click)="clearData()" style="float: right;">Clear Data</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col child-bg">
+      <h4 style="text-align: center;color:green;"><b>Child Component</b></h4>
+      <app-child></app-child>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

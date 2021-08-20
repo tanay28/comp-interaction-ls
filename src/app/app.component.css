@@ -1,0 +1,28 @@
+.wrapper {
+    margin: 30px;
+    padding: 0px;
+}
+.label {
+    margin: 5px;
+    padding: 0px;
+    font-weight: 600;
+}
+.sub-heading {
+    text-align: center;
+    position: relative;
+    bottom: 28px;
+    font-weight: 600;
+}
+.parent-bg {
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 18px;
+    margin-right: 10px;
+}
+
+.child-bg {
+    background-color: wheat;
+    border-radius: 5px;
+    padding: 18px;
+    margin-left: 10px;
+}
